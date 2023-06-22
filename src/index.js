@@ -59,7 +59,7 @@ function App() {
 function Pizza() {
   return (
     <div>
-      <h2>"Pizza Spinaci</h2>
+      <h2>Pizza Spinaci</h2>
       <p>Tomato, mozarella, spinach, and ricotta cheese</p>
       <img src="pizzas/spinaci.jpg" alt="Pizza Spinaci<" />
     </div>
