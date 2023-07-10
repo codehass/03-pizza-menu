@@ -99,15 +99,24 @@ function Menu() {
 function Pizza({ objectPizza }) {
   console.log(objectPizza);
 
-  if (objectPizza.soldOut) return null;
+  // if (objectPizza.soldOut) return null;
 
   return (
-    <li className="pizza">
+    //use ternaries operator to add class
+
+    <li className={`pizza ${objectPizza.soldOut ? "sold-out" : ""}`}>
       <img src={objectPizza.photoName} alt={objectPizza.photoName} />
       <div>
         <h3>{objectPizza.name}</h3>
         <p>{objectPizza.ingredients}</p>
-        <span>{objectPizza.price}€</span>
+
+        {/* {objectPizza.soldOut ? (
+          <span>SOLD OUT</span>
+        ) : (
+          <span>objectPizza.price</span>
+        )} */}
+
+        <span>{objectPizza.soldOut ? "SOLD OUT" : objectPizza.price}</span>
       </div>
     </li>
   );
