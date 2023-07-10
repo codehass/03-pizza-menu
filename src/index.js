@@ -91,6 +91,9 @@ function Menu() {
 
 function Pizza(props) {
   console.log(props);
+
+  if (props.objectPizza.soldOut) return null;
+
   return (
     <li className="pizza">
       <img
@@ -108,13 +111,22 @@ function Pizza(props) {
 
 function Footer() {
   const hour = new Date().getHours();
-  const openHour = 12;
+  const openHour = 8;
   const closeHour = 22;
   const isOpen = hour >= openHour && hour <= closeHour;
   console.log(isOpen);
 
   // if (hour >= openHour && hour <= closeHour) alert("We're currently open!");
   // else alert("We're currently close!");
+
+  // We use that when we want to return an entire component, not just a part of JSX.
+  // if (!isOpen) {
+  //   return (
+  //     <p>
+  //       We're happy to welcome you between {openHour}:00 and {closeHour}:00.{" "}
+  //     </p>
+  //   );
+  // }
 
   return (
     <footer className="footer">
